@@ -11,6 +11,9 @@ gem "bootstrap-sass"
 gem "devise"
 
 
+# For images resizes
+gem 'mini_magick'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
@@ -69,7 +72,8 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  gem "spring"
+
 end
 
 group :test do
