@@ -7,7 +7,7 @@
             <h1 class="display-5 fw-bolder text-white mb-2">Welcome to Pseudo Instagram</h1>
             <p class="lead text-white-50 mb-4">This website is fan copy of popular social network Instagram. It's made for teaching and improving web development skills.</p>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-              <%= link_to "Sign Up", new_account_registration_path, class: "btn btn-primary btn-lg px-4 me-sm-3" %>
+              <%= link_to account_signed_in? ? "Dashboard" : "Sign Up", account_signed_in? ? dashboard_path : new_account_registration_path, class: "btn btn-primary btn-lg px-4 me-sm-3" %>
               <a class="btn btn-outline-light btn-lg px-4" href="#features">Learn More</a> 
             </div>
           </div>

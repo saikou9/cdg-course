@@ -1,7 +1,10 @@
 <div class= "container col-6">
   <div class="justify-content-md-center">
     <% @posts.each do |post| %>
-      <div class="container text-center fw-bold p-1"><%= post.account.username %></div>
+      <div class="container text-center fw-bold p-1">
+        <%= post.account.username %>
+      </div>
+      
       <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>
     <% end %>
   </div>
