@@ -10,6 +10,7 @@ gem "bootstrap-sass"
 #User auth
 gem "devise"
 
+gem "font-awesome-rails"
 
 # For images resizes
 gem 'mini_magick'

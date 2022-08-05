@@ -5,6 +5,7 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  has_one_attached :avatar
 
   def total_followers
     0
