@@ -1,0 +1,13 @@
+.circle {
+  background: white;
+  border: 0.1em solid #0F1C3F;
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+}
+
+.img-round {
+  border-radius: 50%;
+  height: 8em;
+  width: 8em;
+}

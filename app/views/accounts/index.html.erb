@@ -1,9 +1,11 @@
+<h1 class="display-5 fw-bolder mb-2 d-flex justify-content-center">Dashboard</h1>
+
 <div class= "container col-6">
   <div class="justify-content-md-center">
     <% @posts.each do |post| %>
       <div class="container text-center fw-bold p-1">
 
-        <%= post.account%>
+        <%= post.account.username%>
       </div>
       
       <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>
