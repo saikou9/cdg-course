@@ -2,7 +2,8 @@
   <div class="justify-content-md-center">
     <% @posts.each do |post| %>
       <div class="container text-center fw-bold p-1">
-        <%= post.account.username %>
+
+        <%= post.account%>
       </div>
       
       <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>

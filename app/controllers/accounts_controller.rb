@@ -16,5 +16,9 @@ class AccountsController < ApplicationController
     @account = Account.find_by_username(params[:username])
   end
 
+  def edit
+    @account = Account.find(params[:id])
+  end
+
 
 end

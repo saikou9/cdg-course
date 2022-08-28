@@ -26,4 +26,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:image)
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
 end
