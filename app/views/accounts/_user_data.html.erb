@@ -12,9 +12,14 @@
     </div>
   </div>
   <div class="col"></div>
-   <div class="d-flex justify-content-center">
-    <%= @account.description %> 
+    <div class="d-flex justify-content-center">
+      <%= @account.description %> 
     </div>
+
+    <% if @account.website %>
+      <%= link_to @account.website, class: ""%>
+    <% end %>
+    
 </div>
 <div class="d-flex justify-content-center">
   <p class="p-1"><%= @account.posts.count %> posts </p>

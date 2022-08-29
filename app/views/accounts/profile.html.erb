@@ -5,7 +5,7 @@
 <% if @account.posts.count > 0 %>
   <div class="container mt-2">
     <div class="img">
-      <div class="row row-cols-3">
+      <div class="row row-cols-3 ">
         <% @account.posts.each do |post| %>
           <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>
         <% end %>
