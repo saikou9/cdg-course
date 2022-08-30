@@ -4,11 +4,20 @@
   <div class="justify-content-md-center">
     <% @posts.each do |post| %>
       <div class="container text-center fw-bold p-1">
-
-        <%= post.account.username%>
+        <%= link_to (image_tag post.account.avatar, width: "50px", class: "img-circle"), profile_path(post.account.username) %>
+        <%= link_to post.account.username, profile_path(post.account.username), class: "text-black text-decoration-none" %>
       </div>
-      
+
       <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>
+
+      <div class="post-details">
+        <p><strong><%= post.total_likes %> likes </strong></p>
+        <p><strong><%= link_to post.account.username, profile_path(post.account.username), class: "text-black text-decoration-none" %> </strong></p>
+        <p class="text-muted"><%= time_ago_in_words post.created_at %> ago </p>
+
+      </div>
+      <%= post.description %>
+
     <% end %>
   </div>
 </div>
