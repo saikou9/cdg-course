@@ -1,19 +1,15 @@
 class Post < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  #devise :database_authenticatable, :registerable,
-  #       :recoverable, :rememberable, :trackable, :validatabl
-  
+  default_scope { order created_at: :desc}
   belongs_to :account
+
+  has_many :likes
+
   has_one_attached :image
   
   before_create :set_active
 
   scope :active, -> { where active: true }
 
-  def total_likes
-    0
-  end
 
   private
 

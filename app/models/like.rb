@@ -1,0 +1,14 @@
+class Like < ApplicationRecord
+  validates :account_id, uniqueness: {scope: :post_id}
+  belongs_to :post
+  belongs_to :account
+
+  # after_create :update_post_like_counter
+
+  private
+
+  def update_post_like_counter
+    Post.find(self.post_id).increment(:total_likes_count).save
+  end
+
+end

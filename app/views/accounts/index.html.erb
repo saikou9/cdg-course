@@ -10,13 +10,27 @@
 
       <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>
 
+      <div class="post-actions">
+        <div class="like">
+          <% like = current_account.likes.find_by(post: post) %>
+          <% if like.nil? %>
+            <%= button_to fa_icon('heart'), likes_path, params:{ like: { post_id: post.id }}, method: :post, class: "btn btn-primary btn-lg" %>
+          <% else %>
+            <%= button_to fa_icon("fa-light heart-crack"), like_path(like), method: :delete, class: "btn btn-primary btn-lg" %>
+          <% end %>
+        </div>
+      
+        <i class="post-comment"><%= fa_icon('comment') %></i>
+        <i class="post-share"><%= fa_icon('share') %></i>
+      </div>
+
       <div class="post-details">
-        <p><strong><%= post.total_likes %> likes </strong></p>
-        <p><strong><%= link_to post.account.username, profile_path(post.account.username), class: "text-black text-decoration-none" %> </strong></p>
+        <%# <p><strong><%= like.total_likes %> likes </strong></p> %>
+        <p><strong>by <%= link_to post.account.username, profile_path(post.account.username), class: "text-black text-decoration-none" %> </strong></p>
+        <%= post.description %>
         <p class="text-muted"><%= time_ago_in_words post.created_at %> ago </p>
 
       </div>
-      <%= post.description %>
 
     <% end %>
   </div>
