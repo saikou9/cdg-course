@@ -2,13 +2,13 @@
   <div class="col"></div>
     <div class="col d-flex justify-content-center">
       <div class="d-flex ml-2 ">
-        <% if @account.avatar %>
+        <% if @account.avatar.persisted? %>
           <%= image_tag @account.avatar, class: "img-round"%>
         <% else %>  
-          no photo
+          <%= image_tag "default.png", width: "200px"%>
         <% end %>
         <h1 class="me-3"><%= @account.username %></h1>
-        <%= link_to fa_icon('pencil'), edit_account_registration_path %>  
+        <%= link_to fa_icon('pencil'), edit_account_registration_path if can_edit_profile?(@account.id) %>  
       </div>
     </div>
   <div class="col"></div>

@@ -12,8 +12,13 @@
       </div>
     </div>
   </div>
+<% elsif @account.posts.count < 1 and !can_edit_profile?(@account.id) %>
+  <div class="col d-flex justify-content-center pb-3">
+    <h4> This user has not published any posts yet </h4>
+  </div>
 <% else %>
   <div class="col d-flex justify-content-center pb-3">
-    <%= link_to "Create my first post!", new_post_path, class: "btn btn-primary btn-lg px-4 me-sm-3 center" %>
+    <%= link_to "Create my first post!", new_post_path, class: "btn btn-primary btn-lg px-4 me-sm-3 center" if can_edit_profile?(@account.id) %>
   </div>
 <% end %>
+<%=@account.posts.count%>
