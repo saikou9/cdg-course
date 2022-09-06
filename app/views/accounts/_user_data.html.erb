@@ -7,14 +7,28 @@
         <% else %>  
           <%= image_tag "default.png", width: "200px"%>
         <% end %>
+
         <h1 class="me-3"><%= @account.username %></h1>
-        <%= link_to fa_icon('pencil'), edit_account_registration_path if can_edit_profile?(@account.id) %>  
+        <%= link_to fa_icon('pencil'), edit_account_registration_path if can_edit_profile?(@account.id) %>
+
+        <% if !can_edit_profile?(@account.id) and already_follow?(@account.id) %>
+          <%= form_tag unfollow_account_path, method: :delete do %>
+            <%= hidden_field_tag :follow_id, @account.id %>
+            <%= submit_tag "Unfollow", class: "btn btn-primary btn-sm" %>
+          <% end %>
+        <% elsif !can_edit_profile?(@account.id) and !already_follow?(@account.id) %>
+          <%= form_tag follow_account_path, method: :post do %>
+            <%= hidden_field_tag :follow_id, @account.id %>
+            <%= submit_tag "Follow", class: "btn btn-primary btn-sm" %>
+          <% end %>
+        <% end %>
       </div>
     </div>
   <div class="col"></div>
   <div class="d-flex justify-content-center">
     <%= @account.description %> 
   </div>
+
   <% if @account.website %>
     <%= link_to @account.website, class: ""%>
   <% end %>

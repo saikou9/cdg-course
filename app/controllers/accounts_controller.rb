@@ -23,8 +23,15 @@ class AccountsController < ApplicationController
     else
       flash[:danger] = "Unable to add following user"
     end
-    
-    redirect_to dashboard_path
+  end
+
+  def unfollow_account
+    account_id = params[:follow_id]
+    if Follower.find_by(follower_id: current_account.id, following_id: account_id).destroy
+      flash[:success] = "Unfollow user"
+    else
+      flash[:danger] = "Unable to unfollowing user"
+    end
   end
 
   def edit

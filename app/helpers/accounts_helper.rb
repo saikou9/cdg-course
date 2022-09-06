@@ -8,5 +8,9 @@ module AccountsHelper
     image_path = account.avatar.present? ? account.avatar : "default.png"
     image_tag(image_path, width: width, class: "img-circle")
   end
+  
+  def already_follow? profile_id
+    Follower.where(follower_id: current_account.id, following_id: profile_id).exists?
+  end
 
 end

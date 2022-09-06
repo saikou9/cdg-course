@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/dashboard",         to: "accounts#index"
   get "profile/:username",  to: "accounts#profile", as: :profile
   post "follow/account",    to: "accounts#follow_account", as: :follow_account
+  delete "unfollow/account",    to: "accounts#unfollow_account", as: :unfollow_account
 
  
   resources :posts, only: [:new, :create, :show]
