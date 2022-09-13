@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     else
       redirect_to new_post_path, flash: { danger: "Post was not save"}
     end
-
+    
   end 
 
   def show

@@ -1,26 +1,36 @@
-<!-- Header-->
-  <header class="bg-dark py-5">
-    <div class="container px-5">
-      <div class="row gx-5 justify-content-center">
-        <div class="col-lg-6">
-          <div class="text-center my-5">
-            <h1 class="display-5 fw-bolder text-white mb-2">Welcome to Pseudo Instagram</h1>
-            <p class="lead text-white-50 mb-4">This website is fan copy of popular social network Instagram. It's made for teaching and improving web development skills.</p>
-            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-              <%= link_to account_signed_in? ? "Dashboard" : "Sign Up", account_signed_in? ? dashboard_path : new_account_registration_path, class: "btn btn-primary btn-lg px-4 me-sm-3" %>
-              <a class="btn btn-outline-light btn-lg px-4" href="#features">Learn More</a> 
-            </div>
-          </div>
-        </div>
-      </div>
+<section>
+  <div class="circle"></div>
+  <div class="content">
+    <div class="textBox">
+      <h2> It's not just a posts<br> It's <span> Instagram </span></h2>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+      commodo consequat. </p>
+      <a class="btn btn-outline-light btn-primary btn-lg px-4" href="#features">Learn More</a> 
+      <%= link_to account_signed_in? ? "Dashboard" : "Sign Up", account_signed_in? ? dashboard_path : new_account_registration_path, class: "dashboardLink btn btn-outline-light btn-primary btn-lg px-4" %>
     </div>
-  </header>
+    <div class="imgBox">
+      <%= image_tag "InstBlue.png", class:"instagram" %>
+    </div>
+  </div>
+  <ul class="thumb">
+    <li><%= image_tag "thumb1.png", class:"imgInst" %></li>
+    <li><%= image_tag "thumb2.png", class:"imgInst" %></li>
+  </ul>
+  <ul class="sci">
+    <li><%= link_to image_tag("github.png",  :alt => "Github logo",  :class => "imgSocial "), "https://github.com/saikou9/cdg-course" %></li>
+    <li><%= link_to image_tag("twitter.png", :alt => "Twitter logo", :class => "imgSocial "), dashboard_path %></li>
+  </ul>
+</section>
+<p class="lead text-white-50 mb-4">This website is fan copy of popular social network Instagram. It's made for teaching and improving web development skills.</p>
+    
 <!-- Features section-->
-  <section class="py-5 border-bottom" id="features">
+  <div class="py-5 border-bottom" id="features">
     <div class="container px-5 my-5">
       <div class="row gx-5">
         <div class="col-lg-4 mb-5 mb-lg-0 ">
-          <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3 "><i class="bi bi-collection "></i></div>
+          <div class="feature bg-primary bgGradient text-white rounded-3 mb-3 "><i class="bi bi-collection "></i></div>
           <h2 class="h4 fw-bolder">Adaptive design</h2>
           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
           <a class="text-decoration-none" href="#!">
@@ -29,7 +39,7 @@
           </a>
         </div>
         <div class="col-lg-4 mb-5 mb-lg-0">
-          <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+          <div class="feature bg-primary bgGradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
           <h2 class="h4 fw-bolder">Featured title</h2>
           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
           <a class="text-decoration-none" href="#!">
@@ -38,7 +48,7 @@
           </a>
         </div>
         <div class="col-lg-4">
-          <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+          <div class="feature bg-primary bgGradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
           <h2 class="h4 fw-bolder">Featured title</h2>
           <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
           <a class="text-decoration-none" href="#!">
@@ -48,4 +58,4 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>

@@ -1,0 +1,139 @@
+.content 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .textBox
+{
+  padding-left: 50px;
+  position: relative;
+  max-width: 600px;
+}
+.content .textBox h2
+{
+  color: #333;
+  font-size: 3.5em;
+  line-height: 1.4em;
+  font-weight: 500;
+}
+.content .textBox h2 span
+{
+  font-size: 1.2em;
+  font-weight: 900; 
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.content .textBox p
+{
+  color: #333;
+}
+.content .textBox a
+{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.content .textBox .dashboardLink
+{
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 20px;
+  background: #fff;
+  border:1px solid black;
+  border-radius:20px; 
+  color: black;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.content .imgBox
+{
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 20px;
+  margin-top: 30px;
+}
+.content .imgBox .instagram
+{
+  max-width: 540px;
+}
+.thumb
+{
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  display: flex;
+}
+.thumb li
+{
+  width: 1%;
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.thumb li:hover
+{
+  transform: translateY(-15px);
+}
+.thumb li .imgInst
+{
+  max-width: 60px;
+}
+.sci
+{
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sci li
+{
+  list-style: none;
+}
+.sci li .imgSocial
+{
+  display: inline-block;
+  margin: 5px 0;
+  transform: scale(0.6);
+  width: 50px;
+  cursor: pointer;
+  transition: 0.5s;
+  filter: invert();
+}
+.sci li .imgSocial:hover
+{
+  transform: translateX(-15%);
+}
+.circle
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient( #6600ff 0%, #f42667 100%);
+  clip-path: circle(600px at right 800px);
+}
+.bgGradient
+{
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+}

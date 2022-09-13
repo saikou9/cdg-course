@@ -1,0 +1,11 @@
+<% post.comments.each do |comment| %>
+  <div class="comment">
+    <% if comment.account.avatar.persisted?%>
+      <%= image_tag comment.account.avatar, width: "30px", class: "img-circle" %>
+    <% else %>
+      <%= image_tag "default.png", width: "30px"%>
+    <% end %>
+    <strong><%= comment.account.username %></strong>
+    <%= comment.comment %></br>
+  </div>
+<% end %>

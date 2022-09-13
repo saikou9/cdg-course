@@ -1,0 +1,140 @@
+.suggestions 
+{
+  position: relative;
+  width: 100%;
+    /* display: flex; */
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  top: 20px;
+}
+.suggestions .suggestionBox .profileImg
+{
+  width: 50%;
+}
+.suggestions .suggestionBox h2 span
+{
+  font-size: 1.2em;
+  font-weight: 900; 
+  background: linear-gradient(to right, #3700ff 0%, #2678f4 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.suggestions .suggestionBox .profile h3 .profileLink
+{
+  text-decoration: none;
+  font-size: 0.8em;
+  color: black;
+}
+.suggestions .suggestionBox .btnFollow
+{
+  display: inline-block;
+  padding: 8px 20px;
+  background: #2652f4;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 0;
+  transition: 0.3s;
+}
+.suggestions .suggestionBox .btnFollow:hover
+{
+  background: #2c4cc0;
+  transform: scale(1.1);
+}
+.row .no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+}
+.posts
+{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  /* align-items: center; */
+  top: 20px;
+}
+.posts .imgBox
+{
+  padding-bottom: 30px;
+  display: flex;
+}
+.posts .row .col
+{
+  padding: 0;
+}
+.posts .textBoxBg
+{
+  margin-right: 302px;
+  padding: 0;
+}
+.posts .textBox
+{
+  /* background: #384def;  */
+
+
+}
+.posts .textBox .profileData
+{
+  padding-top: 20px;
+}
+.posts .textBoxBg p
+{
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 30px;
+  color: black;
+}
+.posts .textBoxBg a
+{
+  text-align: left;
+  color: black;
+  text-decoration: none;
+  font-size: 21px;
+}
+.posts .heart
+{
+  border-color: transparent;
+  display: inline-block;
+  padding: 8px 20px;
+  background: #2652f4;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 0;
+  transition: 0.3s;
+  align-items: left;
+  margin-right: 250px;
+}
+.posts .textBoxBg .profileData
+{
+  padding: 10px;
+  /* background-color: #2652f4; */
+}
+.resizedTextbox 
+{
+  align-items: left;
+  width: 247px; 
+  padding: 1px;
+  padding-right: 41px;
+  box-shadow: none !important;
+}
+.posts .textBoxBg .post-details 
+{
+  margin-top: 20px; 
+}
+.posts .textBoxBg .post-details p
+{
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.posts .row .likesText
+{
+  text-align: left;
+  margin-left: 6px;
+}

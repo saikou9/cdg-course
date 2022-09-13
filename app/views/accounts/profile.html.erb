@@ -3,9 +3,9 @@
 </div>
 
 <% if @account.posts.count > 0 %>
-  <div class="container mt-2">
+  <div class="container mt-5">
     <div class="img">
-      <div class="row row-cols-3 ">
+      <div class="row row-cols-3 gy-4">
         <% @account.posts.each do |post| %>
           <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>
         <% end %>
@@ -21,4 +21,3 @@
     <%= link_to "Create my first post!", new_post_path, class: "btn btn-primary btn-lg px-4 me-sm-3 center" if can_edit_profile?(@account.id) %>
   </div>
 <% end %>
-<%=@account.posts.count%>

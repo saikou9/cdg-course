@@ -1,0 +1,39 @@
+.container h1 span
+{
+  font-size: 1.2em;
+  font-weight: 900; 
+  background: linear-gradient(to right, #3700ff 0%, #2678f4 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.container .form-group
+{
+  padding-bottom: 20px;
+}
+
+.container a .submit
+{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.container a .btn
+{
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}

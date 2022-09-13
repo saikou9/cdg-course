@@ -1,0 +1,31 @@
+.img-round {
+  border-radius: 50%;
+  height: 7em;
+  width: 7em;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+i.active {
+  color: #555
+}
+
+i:hover {
+  color: rgb(64, 104, 144)
+}
+.container h4
+{
+  font-size: 1.2em;
+  font-weight: 900; 
+  background: linear-gradient(to right, #3700ff 0%, #2678f4 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}

@@ -13,7 +13,11 @@
  *= require font-awesome
  *= 
  *= require_tree .
+ *= require header.css
+ *= require staticpages.css
+ *= require profile.css
+ *= require dashboard.css
+ *= require new.css
  *= require_self
- *= require circle
  += require_styles
  */
