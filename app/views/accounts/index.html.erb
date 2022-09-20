@@ -31,7 +31,11 @@
         <div class="textBoxBg">
           <div class="textBox">
             <div class="profileData">
-              <%= link_to (image_tag post.account.avatar, width: "50px", class: "img-circle"), profile_path(post.account.username) %>
+              <% if post.account.avatar.present? %>
+                <%= link_to (image_tag post.account.avatar, width: "50px", class: "img-circle"), profile_path(post.account.username)  %>
+              <% else %>
+                <%= link_to (image_tag "default.png", width: "50px", class: "img-circle"), profile_path(post.account.username)  %>
+              <% end %>
               <a><%= link_to post.account.username, profile_path(post.account.username) %></a>
             </div>
 

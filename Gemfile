@@ -10,6 +10,9 @@ gem "bootstrap-sass"
 #User auth
 gem "devise"
 
+gem 'jquery-rails'
+
+# For icons
 gem "font-awesome-rails"
 
 # For images resizes
@@ -77,6 +80,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   gem "spring"
 
+  gem "rspec-rails"
+
 end
 
 group :test do
@@ -84,4 +89,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem "factory_bot"
+  gem "ffaker"
+  gem 'database_cleaner-active_record'
 end
