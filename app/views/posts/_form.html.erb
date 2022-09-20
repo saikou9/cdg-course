@@ -1,7 +1,11 @@
 <%= form_for @post, html: { multipart: true } do |f| %>
 
   <div class="form-group">
-    <%= f.label :description %>
+    <% if @post.image.present? %>
+      <%= image_tag @post.image, width: "350px", class: "postImg" %></br>
+    <% end %>
+
+    <%= f.label :Image %>
     <%= f.file_field :image, class: "form-control pb-1"%>
   </div>
 

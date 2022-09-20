@@ -37,3 +37,18 @@
   letter-spacing: 1px;
   text-decoration: none;
 }
+ .authorComment
+{
+  border-radius: 40px;
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 3px;
+}
+.anotherUserComment
+{
+  border-radius: 40px;
+  /* background: gray; */
+  text-align: right !important;
+} 

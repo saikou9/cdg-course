@@ -34,6 +34,16 @@
               <%= link_to (image_tag post.account.avatar, width: "50px", class: "img-circle"), profile_path(post.account.username) %>
               <a><%= link_to post.account.username, profile_path(post.account.username) %></a>
             </div>
+
+            <% if post.description %>
+              <div class="post-details">
+                <p><%= post.description %></p>
+              </div>
+            <% else %>
+              <p> No description about author </p>
+            <% end %>
+
+            <b class="text-muted time"><%= time_ago_in_words post.created_at %> ago </b>
             
             <div class="row post-actions no-gutters">
               <% like = current_account.likes.find_by(post: post) %>
@@ -47,18 +57,13 @@
                 <b class="pt-2 likesText"><%= post.likes.count%> likes</b>
             </div>
 
-            <% if post.description %>
-              <div class="post-details">
-                <p><strong>by <%= link_to post.account.username, profile_path(post.account.username), class: "text-black text-decoration-none" %> </strong></p>
-                <p>-<%= post.description %></p>
-              </div>
-            <% else %>
-              <p> No comments about author </p>
-            <% end %>
+            <div class="rectangle"></div>
 
-            <%= render "posts/comments", post: post %>
+            <div class="comments-feed">
+              <%= render "posts/comments", post: post %>
+            </div>
             
-            <div class="comment-box justify-content-md-center d-flex">
+            <div class="comment-box justify-content-md-center d-flex pt-3">
               <%= form_for @comment do |f| %>
                 <%= f.hidden_field :post_id, value: post.id %>
                 <div class="input-group">
@@ -69,9 +74,6 @@
                 </div>
               <% end %>
             </div>
-
-            <b class="text-muted time"><%= time_ago_in_words post.created_at %> ago </b>
-
           </div>
         </div>
       </div>  

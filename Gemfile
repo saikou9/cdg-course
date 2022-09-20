@@ -66,6 +66,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'webpacker', github: 'rails/webpacker'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 

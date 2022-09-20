@@ -12,6 +12,14 @@ class CommentsController < ApplicationController
     end
   end 
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    post = @comment.post
+    @comment.destroy
+
+    redirect_to dashboard_path
+  end
+
   private
 
   def comment_params

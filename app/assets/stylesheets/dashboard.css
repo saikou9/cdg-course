@@ -54,7 +54,6 @@
   position: relative;
   width: 100%;
   text-align: center;
-  /* align-items: center; */
   top: 20px;
 }
 .posts .imgBox
@@ -70,12 +69,6 @@
 {
   margin-right: 302px;
   padding: 0;
-}
-.posts .textBox
-{
-  /* background: #384def;  */
-
-
 }
 .posts .textBox .profileData
 {
@@ -124,10 +117,6 @@
   padding-right: 41px;
   box-shadow: none !important;
 }
-.posts .textBoxBg .post-details 
-{
-  margin-top: 20px; 
-}
 .posts .textBoxBg .post-details p
 {
   padding-bottom: 0;
@@ -137,4 +126,17 @@
 {
   text-align: left;
   margin-left: 6px;
+}
+.comments-feed
+{
+  height: 160px;
+  overflow: scroll;
+}
+.rectangle {
+  margin-left: 18px;
+  margin-bottom: 10px;
+	width: 300px;
+	height: 5px;
+	background: linear-gradient(to right, #3700ff 0%, #2678f4 50%);
+  border-radius: 10px;
 }

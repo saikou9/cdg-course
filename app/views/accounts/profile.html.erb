@@ -7,7 +7,11 @@
     <div class="img">
       <div class="row row-cols-3 gy-4">
         <% @account.posts.each do |post| %>
-          <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block" %>
+
+          <%= link_to post_path(post) do %>
+            <%= image_tag post.image, width: "350px", class: "rounded mx-auto d-block imgProfile" %>
+          <% end %>
+
         <% end %>
       </div>
     </div>
