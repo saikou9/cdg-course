@@ -15,7 +15,7 @@
 
           <% if current_account.id == @post.account_id %>
             <i class="pr-5"><%= link_to fa_icon('pencil'), edit_post_path(@post.id) %></i>
-            <i class="pr-5"><%= button_to "DElete", posts_path(@post.id), method: :delete, data: { turbo: false } %></i>
+            <i class="pr-5"><%= button_to "DElete", post_path(@post), method: :delete, data: { turbo: false } %></i>
           <% end %>
 
           <% if @post.description %>

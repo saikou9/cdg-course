@@ -41,10 +41,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = current_account.post.find(params[:id])
-    @post.destroy
+    @post = current_account.posts.where(params[:id])
+    @post.destroy(params[:id])
 
-    redirect_to @post
+    redirect_to profile_path(current_account.username)
     flash[:success] = "The post was successfully destroyed."
   end
 
