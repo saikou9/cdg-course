@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_account!
-  before_action :show_post, only: [:show]
+  # before_action :show_post, only: [:show]
 
   def index
     @post = current_account.posts.all
@@ -15,20 +15,20 @@ class PostsController < ApplicationController
     @post.account_id = current_account.id if account_signed_in?
 
     if @post.save
-      redirect_to dashboard_path, flash: { success: "Post was created successfully :)"}
+      redirect_to post_path(@post), flash: { success: "Post was created successfully :)"}
     else
       redirect_to new_post_path, flash: { danger: "Post was not save"}
     end
-    
   end 
 
   def show
+    @post = Post.find(params[:id]) if params[:id].present?
     @comment = Comment.new
   end
 
-  def show_post
-    @post = Post.find(params[:id]) if params[:id].present?
-  end
+  # def show_post
+  #   @post = Post.find(params[:id]) if params[:id].present?
+  # end
 
   def edit
     @post = current_account.posts.find(params[:id])

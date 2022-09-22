@@ -14,7 +14,7 @@
           </div>
 
           <% if current_account.id == @post.account_id %>
-            <i class="pr-5"><%= button_to fa_icon('pencil'), edit_post_path(@post.id), class:"btn btn-primary heart" %></i>
+            <i class="pr-5"><%= link_to fa_icon('pencil'), edit_post_path(@post), class:"btn btn-primary heart" %></i>
             <i class="pr-5"><%= button_to fa_icon("trash"), post_path(@post), method: :delete, class:"btn btn-primary heart", data: {confirm: "Are you sure?"} %></i>
           <% end %>
 
