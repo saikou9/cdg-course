@@ -1,14 +1,36 @@
 require 'rails_helper'
 
 RSpec.describe AccountsController, type: :controller do
-  let(:account) { build(:account) }
+  let(:account) { create :account }
+  before { sign_in account }
 
-  it 'should be valid' do
-    expect(account.password).to eq "password"
+  describe '#index' do
+    subject { process :index }
+    it 'render a template' do
+      get :index
+      expect(response).to render_template :index
+    end
   end
 
-  it 'must have an idectical password' do
-    account = build(:account)
-    expect(account.password).to eq "password"
+  describe '#profile' do
+    it 'redirect to profile path' do
+      expect(response.status).to eq 200
+    end
   end
+
+  # describe '#follow_account' do
+  #   it 'user can follow account' do
+  #     account2 = build(:account)
+  #   end
+  # end
+
+  # describe '#edit' do
+  #   it 'render :edit' do
+  #     new_account = FactoryBot.create :account
+  #     get :edit, params: {
+  #       id: new_account.id
+  #     }
+  #     expect(response).to render_template :edit
+  #   end
+  # end
 end

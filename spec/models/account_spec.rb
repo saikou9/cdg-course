@@ -1,15 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Account, type: :model do
-  # subject { build(:account) }
+  let(:account) { FactoryBot.create(:account) }
 
   it 'should be valid' do
-    account = build(:account)
     expect(account).to be_valid
   end
 
   it 'must have an idectical password' do
-    account = build(:account)
     expect(account.password).to eq "password"
   end
 

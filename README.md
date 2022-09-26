@@ -1,24 +1,46 @@
-# README
+# Pseudo Instagram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1> This project was made as part of the Ruby on Rails Academy by the Crimea Digital Group. </h1>
 
-Things you may want to cover:
+Project runs with
+* Ruby 3.0.0p0
+* Rails 7.0.3
+* SQLite3 
 
-* Ruby version
+<h1>Functional</h1>
 
-* System dependencies
+👉A user can sign up for an account
 
-* Configuration
+👉A user can log in to their account
 
-* Database creation
+👉A user can post an image
 
-* Database initialization
+👉A user can edit post he owns
 
-* How to run the test suite
+👉A user can follow another user
 
-* Services (job queues, cache servers, search engines, etc.)
+👉A user can unfollow another user
 
-* Deployment instructions
+👉A user can view his/her feed
 
-* ...
+👉A user can leave comment
+
+👉 A user can remove his/her comments
+
+👉A user can see comments
+
+👉A user can like/dislike (if liked previously) posts
+
+👉A user can view the number of likes on a post
+
+# Also
+
+👉A user can upload an avatar image
+
+👉A user can see perfonal suggestions for him
+
+👉A user can see perfonal suggestions for him
+
+👉A user can see dashboard with everybody posts, sorted by newest
+
+👉A user can delete post he owns

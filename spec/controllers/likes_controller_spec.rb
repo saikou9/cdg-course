@@ -1,25 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe PostsController, type: :controller do
+RSpec.describe LikesController, type: :controller do
   let(:account) { create :account }
   let(:post) { create :post }
+  let(:like) { create :like }
   before { sign_in account }
 
   describe '#create' do
-    # let(:params) { { like: attributes_for(:like, account: create(:account)) } }
-    subject { process :create, method: :post, params: params }
-
-    # it 'created a post' do
-    #   expect { subject }.to change(Like, :count).by(1)
-    # end
-
-    # it 'redirects to post page' do
-    #   subject
-    #   expect(response).to redirect_to post_path(Post.last)
-    # end
-
-    # it 'assigns post to correct account' do
-    #   subject
-    #   expect(assigns(:post).account).to eq account
+    it 'created a post' do
+      like = build(:like)
+      expect { subject }.to change(Like, :count).by(1)
     end
+
+    it 'redirects to post page' do
+      like = FactoryBot.build :like
+      expect(response).to redirect_to(assigns(:like))
+    end
+  end
 end
