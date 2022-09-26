@@ -59,7 +59,6 @@ RSpec.describe PostsController, type: :controller do
       subject
       expect(assigns(:post).account).to eq account
     end
-
   end
 
   describe '#show' do
