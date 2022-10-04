@@ -1,0 +1,1 @@
+<%= Follower.where(follower_id: current_account.id).map(&:following_id) %>

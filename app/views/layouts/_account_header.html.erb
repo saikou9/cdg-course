@@ -2,6 +2,7 @@
   <header>
     <%= link_to "INSTAGRAM", root_path, class:"logo"%>
       <ul>
+      <li><%= link_to "Dashbaord", dashboard_path, class:"link" %></li>
       <li><%= link_to "#{current_account.username}", profile_path(current_account.username), class:"link" %></li>
       <li><%= link_to "New Post", new_post_path, class:"link" %></li>
       <li><%= link_to "Sign Out", destroy_account_session_path, method: "DELETE", data: { "turbo-method": "DELETE" }, class:"link" %></li>

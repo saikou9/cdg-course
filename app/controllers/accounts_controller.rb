@@ -4,7 +4,10 @@ class AccountsController < ApplicationController
 
   def index
     #user dashboard feed
-    @posts = Post.active
+    following_ids = Follower.where(follower_id: current_account.id).map(&:following_id)
+    following_ids << current_account.id
+
+    @posts = Post.includes(:account).where(account_id: following_ids).active
     @comment = Comment.new
 
     following_ids = Follower.where(follower_id: current_account.id).map(&:following_id)
@@ -15,6 +18,14 @@ class AccountsController < ApplicationController
 
   def profile
     #user profile
+  end
+
+  def total_followers
+    follow_id = Follower.where(following_id: current_account)
+  end
+
+  def total_following
+    Follower.where(follower_id: current_account)
   end
   
   def follow_account

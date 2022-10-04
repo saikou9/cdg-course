@@ -35,3 +35,11 @@ i:hover {
   width: 350px;
   object-fit: cover;
 }
+
+.account_details
+{
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+

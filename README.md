@@ -39,8 +39,6 @@ Project runs with
 
 👉A user can see perfonal suggestions for him
 
-👉A user can see perfonal suggestions for him
-
 👉A user can see dashboard with everybody posts, sorted by newest
 
 👉A user can delete post he owns
