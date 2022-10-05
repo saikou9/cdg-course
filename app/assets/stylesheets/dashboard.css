@@ -21,7 +21,7 @@
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
-.suggestions .suggestionBox .profile h3 .profileLink
+/* .suggestions .suggestionBox .profile h3*/ .profileLink 
 {
   text-decoration: none;
   font-size: 0.8em;
@@ -139,4 +139,8 @@
 	height: 5px;
 	background: linear-gradient(to right, #3700ff 0%, #2678f4 50%);
   border-radius: 10px;
+}
+.ml-1
+{
+  margin-left: 10px;
 }

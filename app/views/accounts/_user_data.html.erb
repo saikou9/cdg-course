@@ -24,8 +24,8 @@
   </div>
   <div class="pt-4 d-flex justify-content-center">
     <b class="px-3"><%= "#{@account.posts.count} posts" %></br></b>
-    <b class="px-3"><%= "#{@account.total_followers} followers" %></br></b>
-    <b class="px-3"><%= link_to "#{@account.total_following} following", total_followers_path, class:"account_details"%></br></b>
+    <b class="px-3"><%= link_to "#{@account.total_following} followers", total_followers_path(@account.username), class:"account_details" %></br></b>
+    <b class="px-3"><%= link_to "#{@account.total_followers} following", total_followers_path(@account.username), class:"account_details" %></br></b>
   </div>
   <div class="pt-4 row mx-auto justify-content-center">
     <%= @account.description %> 

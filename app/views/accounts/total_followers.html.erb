@@ -1,1 +1,75 @@
-<%= Follower.where(follower_id: current_account.id).map(&:following_id) %>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center pb-3">
+      <% accounts = Follower.where(follower_id: @account.id).pluck(:following_id) %>
+      <% if accounts.count == 0 %>
+        <div class="col d-flex justify-content-center pb-3">
+          <h4> This user has not followings </h4>
+        </div>
+      <% else %>
+        <div class="row">
+          <h4> Followings </h4></br>
+
+          <% accounts.each do |account| %>
+            <div class="col d-flex justify-content-center pb-3">
+              <% name = Account.where(id: account).pluck(:username).join(', ') %>
+
+              <% if Account.where(id: account).pluck(:avatar).join(', ') == nil %>
+                <%= image_tag Account.where(id: account).pluck(:avatar).join(', '), class: "img-round"%>
+              <% else %>  
+                <%= image_tag "default.png", width: "50px"%>
+              <% end %>
+
+              <h3 class="ml-2"><%= link_to name, profile_path(name), class:"profileLink ml-1" %></h3>
+
+              <% if can_edit_profile?(@account.id) and already_follow?(account) %>
+                <%= form_tag unfollow_account_path, method: :delete do %>
+                  <%= hidden_field_tag :follow_id, account %>
+                  <%= submit_tag "Unfollow", class: "btn btn-primary btn-sm ml-1" %></br>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center pb-3">
+      <% accounts = Follower.where(following_id: @account.id).pluck(:follower_id) %>
+      <% if accounts.count == 0 %>
+        <div class="col d-flex justify-content-center pb-3">
+          <h4> This user has not followers </h4>
+        </div>
+      <% else %>
+        <div class="row">
+          <h4> Followers </h4></br>
+
+          <% accounts.each do |account| %>
+            <div class="col d-flex justify-content-center pb-3">
+              <% name = Account.where(id: account).pluck(:username).join(', ') %>
+
+              <% if Account.where(id: account).pluck(:avatar).join(', ') == nil %>
+                <%= image_tag Account.where(id: account).pluck(:avatar).join(', '), class: "img-round"%>
+              <% else %>  
+                <%= image_tag "default.png", width: "50px"%>
+              <% end %>
+
+              <h3 class="ml-2"><%= link_to name, profile_path(name), class:"profileLink ml-1" %></h3>
+
+              <% if !can_edit_profile?(account) and already_follow?(account) %>
+                <%= form_tag unfollow_account_path, method: :delete do %>
+                  <%= hidden_field_tag :follow_id, account %>
+                  <%= submit_tag "Unfollow", class: "btn btn-primary btn-sm ml-1" %>
+                <% end %>
+              <% elsif !can_edit_profile?(account) and !already_follow?(account) %>
+                <%= form_tag follow_account_path, method: :post do %>
+                  <%= hidden_field_tag :follow_id, account %>
+                  <%= submit_tag "Follow", class: "btn btn-primary btn-sm ml-1" %>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
   before_action :authenticate_account!
   before_action :set_account, only: [:profile]
+  # before_action :set_account, only: [:total_followers]
 
   def index
     #user dashboard feed
@@ -21,7 +22,8 @@ class AccountsController < ApplicationController
   end
 
   def total_followers
-    follow_id = Follower.where(following_id: current_account)
+    set_account
+    # follow_id = Follower.where(following_id: current_account)
   end
 
   def total_following
