@@ -27,7 +27,7 @@
   font-size: 0.8em;
   color: black;
 }
-.suggestions .suggestionBox .btnFollow
+.btnFollow
 {
   display: inline-block;
   padding: 8px 20px;
@@ -74,19 +74,12 @@
 {
   padding-top: 20px;
 }
-.posts .textBoxBg p
-{
-  text-align: left;
-  padding-left: 20px;
-  padding-top: 30px;
-  color: black;
-}
-.posts .textBoxBg a
+.textPost 
 {
   text-align: left;
   color: black;
   text-decoration: none;
-  font-size: 21px;
+  font-size: 21px; 
 }
 .posts .heart
 {
@@ -104,11 +97,6 @@
   align-items: left;
   margin-right: 250px;
 }
-.posts .textBoxBg .profileData
-{
-  padding: 10px;
-  /* background-color: #2652f4; */
-}
 .resizedTextbox 
 {
   align-items: left;
@@ -122,18 +110,14 @@
   padding-bottom: 0;
   padding-top: 0;
 }
-.posts .row .likesText
-{
-  text-align: left;
-  margin-left: 6px;
-}
 .comments-feed
 {
-  height: 160px;
+  height: 180px;
+  max-height: 180px;
   overflow: scroll;
 }
-.rectangle {
-  margin-left: 18px;
+.rectangle 
+{
   margin-bottom: 10px;
 	width: 300px;
 	height: 5px;
@@ -143,4 +127,42 @@
 .ml-1
 {
   margin-left: 10px;
+}
+
+.btnAction  
+{
+  display: inline-block;
+  padding: 8px 20px;
+      padding-right: 20px;
+      padding-left: 20px;
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+  color: #fff;
+  border-radius: 40px;
+  border: 1px solid white;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.commentAuthor
+{
+  font-size: small;
+  background: linear-gradient(to right, #6600ff 0%, #2652f4 100%, orange);
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.commentUser
+{
+  font-size: small;
+  background: rgb(217, 217, 217);
+  border-radius: 20px;
+}
+.textComment
+{
+  font-size: small; 
+}
+.pt-20
+{
+  padding-top: 20px;
 }

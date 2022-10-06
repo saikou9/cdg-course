@@ -1,0 +1,81 @@
+<div class="row my-5 justify-content-center">
+  <div class="col-3 d-flex flex-row-reverse">
+    <div class="imgBox">
+      <%= image_tag post.image, width: "350px", class: "d-block postImg" if post.image.present?%>
+    </div>
+  </div>
+  <div class="col-3">
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <% if post.account.avatar.present? %>
+          <%= link_to (image_tag post.account.avatar, width: "50px", class: "img-circle"), profile_path(post.account.username)  %>
+        <% else %>
+            <%= link_to (image_tag "default.png", width: "50px", class: "img-circle"), profile_path(post.account.username) %>
+        <% end %>
+        <a><%= link_to post.account.username, profile_path(post.account.username), class:"pt-2 ml-1 textPost" %></a>
+      </div>
+
+      <div class="col-12 d-flex justify-content-left pt-2">
+        <% if post.description %>
+          <% if post.account.avatar.present? %>
+            <%= link_to (image_tag post.account.avatar, width: "25px", class: "img-circle"), profile_path(post.account.username)  %>
+          <% else %>
+            <%= link_to (image_tag "default.png", width: "25px", class: "img-circle"), profile_path(post.account.username) %>
+          <% end %>
+          <p><%= post.description %></p>
+        <% else %>
+          <p> No description about author </p>
+        <% end %>
+      </div>
+
+      <div class="col-12 pt-2">
+        <div class="row">
+          <div class="col-5">
+            <% like = current_account.likes.find_by(post: post) %>
+
+            <% if like.nil? %>
+              <%= button_to fa_icon('heart'), likes_path, params:{ like: { post_id: post.id }}, method: :post, class: "btnAction" %>
+            <% else %>
+              <%= button_to fa_icon("fa-light heart-crack"), like_path(like), method: :delete, class: "btnFollow" %>
+            <% end %>
+            
+            <b class="pt-2 likesText"><%= post.likes.count%> likes</b>
+          </div>
+            <% if current_account.id == post.account_id %>
+              <div class="col-3">
+                <i class="pr-5"><%= link_to fa_icon('pencil'), edit_post_path(post), class:"btnFollow" %></i>
+              </div>
+              <div class="col-2">
+                <i class="pr-5"><%= button_to fa_icon("trash"), post_path(post), method: :delete, class:"btnFollow", data: {confirm: "Are you sure?"} %></i>
+              </div>
+            <% end %>
+        </div>
+      </div>
+
+      <div class="col-12 d-flex justify-content-center py-1">
+        <b class="text-muted time"><%= time_ago_in_words post.created_at %> ago </b>
+      </div>
+
+      <div class="col-12">
+        <div class="rectangle"></div>
+      </div>
+
+      <div class="comments-feed">
+        <%= render "posts/comments", post: post %>
+      </div>
+
+      <div class="col-12 comment-box d-flex pt-20">
+        <%= form_for @comment do |f| %>
+          <%= f.hidden_field :post_id, value: post.id %>
+          <div class="input-group">
+            <%= f.text_field :comment, placeholder: "Add comment here: ", class:"resizedTextbox" %>
+              <div class="input-group-append">
+                <%= f.submit "Post", class: "btn btn-primary btn-sm" %>
+              </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

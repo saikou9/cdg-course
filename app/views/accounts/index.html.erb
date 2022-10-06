@@ -21,66 +21,6 @@
 
 <div class="posts">
   <% @posts.each do |post| %>
-    <div class="row no-gutters">
-      <div class="col justify-content-end d-flex">
-        <div class="imgBox">
-          <%= image_tag post.image, width: "350px", class: "d-block postImg" %>
-        </div>
-      </div>
-      <div class="col">
-        <div class="textBoxBg">
-          <div class="textBox">
-            <div class="profileData">
-              <% if post.account.avatar.present? %>
-                <%= link_to (image_tag post.account.avatar, width: "50px", class: "img-circle"), profile_path(post.account.username)  %>
-              <% else %>
-                <%= link_to (image_tag "default.png", width: "50px", class: "img-circle"), profile_path(post.account.username)  %>
-              <% end %>
-              <a><%= link_to post.account.username, profile_path(post.account.username) %></a>
-            </div>
-
-            <% if post.description %>
-              <div class="post-details">
-                <p><%= post.description %></p>
-              </div>
-            <% else %>
-              <p> No description about author </p>
-            <% end %>
-
-            <b class="text-muted time"><%= time_ago_in_words post.created_at %> ago </b>
-            
-            <div class="row post-actions no-gutters">
-              <% like = current_account.likes.find_by(post: post) %>
-              <div class="col">
-                <% if like.nil? %>
-                  <%= button_to fa_icon('heart'), likes_path, params:{ like: { post_id: post.id }}, method: :post, class: "btn btn-primary heart" %>
-                <% else %>
-                  <%= button_to fa_icon("fa-light heart-crack"), like_path(like), method: :delete, class: "btn btn-primary heart" %>
-                <% end %>
-              </div>
-                <b class="pt-2 likesText"><%= post.likes.count%> likes</b>
-            </div>
-
-            <div class="rectangle"></div>
-
-            <div class="comments-feed">
-              <%= render "posts/comments", post: post %>
-            </div>
-            
-            <div class="comment-box justify-content-md-center d-flex pt-3">
-              <%= form_for @comment do |f| %>
-                <%= f.hidden_field :post_id, value: post.id %>
-                <div class="input-group">
-                  <%= f.text_field :comment, placeholder: "Add comment here: ", class:"resizedTextbox" %>
-                    <div class="input-group-append">
-                      <%= f.submit "Post", class: "btn btn-primary btn-sm" %>
-                    </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>  
-    </div>
+    <%= render "posts/post", post: post %>
   <% end %>
 </div>
