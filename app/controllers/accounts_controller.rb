@@ -23,7 +23,6 @@ class AccountsController < ApplicationController
 
   def total_followers
     set_account
-    # follow_id = Follower.where(following_id: current_account)
   end
 
   def total_following

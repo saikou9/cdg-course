@@ -8,12 +8,13 @@ gem "sass-rails"
 gem "bootstrap-sass"
 
 #User auth
-gem "devise"
+gem 'devise'
+gem 'pundit'
 
 gem 'jquery-rails'
 
 # For icons
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # For images resizes
 gem 'mini_magick'

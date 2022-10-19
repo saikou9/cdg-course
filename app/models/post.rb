@@ -11,7 +11,6 @@ class Post < ApplicationRecord
 
   scope :active, -> { where active: true }
 
-
   private
 
   def set_active

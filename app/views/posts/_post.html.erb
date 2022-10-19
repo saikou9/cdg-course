@@ -32,14 +32,12 @@
       <div class="col-12 pt-2">
         <div class="row">
           <div class="col-5">
-            <% like = current_account.likes.find_by(post: post) %>
-
-            <% if like.nil? %>
+            <% if current_like(post).nil? %>
               <%= button_to fa_icon('heart'), likes_path, params:{ like: { post_id: post.id }}, method: :post, class: "btnAction" %>
             <% else %>
-              <%= button_to fa_icon("fa-light heart-crack"), like_path(like), method: :delete, class: "btnFollow" %>
+              <%= button_to fa_icon("fa-light heart-crack"), like_path(current_like(post)), method: :delete, class: "btnFollow" %>
             <% end %>
-            
+
             <b class="pt-2 likesText"><%= post.likes.count%> likes</b>
           </div>
             <% if current_account.id == post.account_id %>
