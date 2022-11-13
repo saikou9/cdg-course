@@ -1,0 +1,11 @@
+<%= form_with(model: message, local: true, class: "d-flex") do |f| %>
+
+  <div class="form-group">
+    <%= f.text_field :content, placeholder: "Message" ,class: "form-control mr-5"%>
+  </div>
+
+  <%= f.hidden_field :room_id, value: room.id %>
+
+  <a><%= f.submit "->", class: "btn btn-primary mt-0"%></a>
+
+<% end %>

@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.0"
 
+gem 'redis'
+
 #Use SCSS for stylesheets
 gem "sass-rails"
 gem "bootstrap-sass"

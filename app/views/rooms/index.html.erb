@@ -1,0 +1,38 @@
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-3">
+      <%= render 'form', room: Room.new %>
+      <hr>
+      <% @rooms.each do |room| %>
+        <%= link_to room do %>
+          <div class="card mb-2">
+            <div class="card-body d-flex justify-content-center">
+              <%= room.name %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-9">
+      <% if @room.present? %>
+        <div class="chat-room">
+          <h2 class="d-flex justify-content-center"><%= @room.name %></h2>
+            <div class="chat-box">
+              <% @room.messages.each do |message| %>
+                <div class="message">
+                  <% if message.account.avatar.present? %>
+                    <%= link_to (image_tag message.account.avatar, width: "20px", class: "img-circle"), profile_path(message.account.username) %>
+                  <% else %>
+                    <%= link_to (image_tag "default.png", width: "20px", class: "img-circle"), profile_path(message.account.username) %>
+                  <% end %>
+                  <p><%= message.content %></p></br>
+                </div>
+                <p><%= message.created_at.strftime("%I:%S %p  %d %b")%></p></br>
+              <% end %>
+              <%= render 'messages/form', message: Message.new, room: @room %>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
